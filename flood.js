@@ -6,6 +6,24 @@ donateNow.addEventListener('click', function(){
     
     const donateInput = parseFloat(document.getElementById('donate-input').value);
 
+    const floodDonate = document.getElementById('flood-donate').innerText
+    const historyName = donateInput + ' Taka is ' + floodDonate;
+
+    const historyContent = document.createElement('div');
+    historyContent.className = "border p-5 rounded-xl";
+    historyContent.innerHTML = `
+        <h3 class="text-xl font-bold mb-5">${historyName}</p>
+        <p class="mt-4 font-normal">${new Date().toLocaleTimeString()}</p>
+    `
+    const historyList = document.getElementById('history-list')
+    const historySection = document.getElementById('history-section')
+    historySection.insertBefore(historyContent, historySection.firstChild)
+
+    // const p = document.createElement("p")
+    // p.innerText(historyName)
+    // console.log(p)
+    // historyContent.appendChild(p)
+
     if(donateInput > 0){
 
         const balance = parseFloat(document.getElementById('new-balance').innerText);
@@ -29,15 +47,25 @@ document.getElementById('btn-blog')
 })
 
 //   History button
-// const btnHistory = document.getElementById('btn-history')
-// btnHistory.addEventListener('click', function(){
-    
-//     const historyContent = document.getElementById('history-content')
-//     const newElement = document.createElement('div')
+const btnHistory = document.getElementById('btn-history')
+btnHistory.addEventListener('click', function(){
+    btnHistory.classList.add('bg-[#B4F461]')
+    const btnDonation = document.getElementById('btn-donation')
+    btnDonation.classList.remove('bg-[#B4F461]')
 
-//     newElement.innerHTML=`
-//     <h3 class="font-bold text-xl"><span>{donateInput}</span> Taka is Donated for Flood at Noakhali, Bangladesh</h3>
-//     <p>time zone</p>
-//     `
-//     historyContent.appendChild(newElement);
-// })
+    const mainContent = document.getElementById('main-content')
+    mainContent.classList.add('hidden')
+
+    const historySection = document.getElementById('history-section')
+    historySection.classList.remove('hidden')
+})
+
+// donation button
+const btnDonation = document.getElementById('btn-donation')
+btnDonation.addEventListener('click', function(){
+    btnDonation.classList.add('bg-[#B4F461]')
+    btnHistory.classList.remove('bg-[#B4F461]')
+    
+    const mainContent = document.getElementById('main-content')
+    mainContent.classList.remove('hidden')
+})
