@@ -11,12 +11,12 @@
 
 </head>
 <body>
-    <header>
+    <header class="sticky top-0 backdrop-blur-xl">
 
         <!-- navber start -->
         <nav class="">
             <div class="bg-[#F9F7F3] py-8">
-                <div class="flex justify-between max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row justify-between gap-4 p-2 lg:p-0 max-w-6xl mx-auto">
                     <button id="btn-blog" class="px-8 py-3 bg-[#B4F461] text-xl font-bold rounded-lg">Blog</button>
                     <div class="flex gap-4 justify-center items-center">
                         <img class="border-2 border-dashed p-1" src="assets/logo.png" alt="">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center items-center mt-20 gap-5">
+            <div class="flex justify-center items-center mt-16 gap-5">
                 <button id="btn-donation" class="px-8 py-4 rounded-lg bg-[#B4F461] font-bold text-lg">Donation</button>
                 <button id="btn-history" class="border px-8 py-4 rounded-lg bg-[#1111110D] font-bold text-lg">History</button>
             </div>
@@ -40,8 +40,8 @@
      <main id="main-content" class="max-w-6xl mx-auto">
 
         <!-- Noakhali flood -->
-        <section class="border-2  rounded-xl p-8 mt-8">
-            <div class="flex gap-8">
+        <section class="border-2  rounded-xl p-8 mt-14">
+            <div class="flex flex-col lg:flex-row gap-8">
                 <img src="assets/noakhali.png" alt="">
 
                 <!-- BDT coin text input donate now section -->
@@ -82,20 +82,20 @@
 
         <!-- Feni flood -->
         <section class="border-2  rounded-xl p-8 mt-8">
-            <div class="flex gap-8">
+            <div class="flex flex-col lg:flex-row gap-8">
                 <img src="assets/feni.png" alt="">
 
                 <!-- BDT coin text input donate now section -->
                 <div>
                     <button class="flex gap-2 mb-4 bg-[#1111110D] px-4 py-3 rounded-lg">
                         <img src="assets/coin.png" alt="">
-                        <h4 class="font-bold text-xl text-[#111111B3]"><span>600</span> BDT</h4>
+                        <h4 class="font-bold text-xl text-[#111111B3]"><span id="feni-donation">600</span> BDT</h4>
                     </button>
                     <div class="flex flex-col space-y-4">
-                        <h3 class="text-xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h3>
+                        <h3 id="feni-name" class="text-xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h3>
                         <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
-                        <input class="px-6 py-4 rounded-lg border" type="text" name="" id="" placeholder="Write Donation Amount">
-                        <button class="bg-[#B4F461] px-8 py-4 w-full rounded-xl font-bold text-xl">Donate now</button>
+                        <input class="px-6 py-4 rounded-lg border" type="text" name="" id="feni-input" placeholder="Write Donation Amount">
+                        <button id="feni-donate-now" class="bg-[#B4F461] px-8 py-4 w-full rounded-xl font-bold text-xl">Donate now</button>
                     </div>
                 </div>
             </div>
@@ -103,20 +103,20 @@
 
         <!-- Injured section -->
         <section class="border-2  rounded-xl p-8 mt-8">
-            <div class="flex gap-8">
+            <div class="flex flex-col lg:flex-row gap-8">
                 <img src="assets/quota-protest.png" alt="">
 
                 <!-- BDT coin text input donate now section -->
                 <div>
                     <button class="flex gap-2 mb-4 bg-[#1111110D] px-4 py-3 rounded-lg">
                         <img src="assets/coin.png" alt="">
-                        <h4 class="font-bold text-xl text-[#111111B3]"><span>2400</span> BDT</h4>
+                        <h4 class="font-bold text-xl text-[#111111B3]"><span id="injured-donation">2400</span> BDT</h4>
                     </button>
                     <div class="flex flex-col space-y-4">
-                        <h3 class="text-xl font-bold">Aid for Injured in the Quota Movement</h3>
+                        <h3 id="injured-name" class="text-xl font-bold">Aid for Injured in the Quota Movement</h3>
                         <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-                        <input class="px-6 py-4 rounded-lg border" type="text" name="" id="" placeholder="Write Donation Amount">
-                        <button class="bg-[#B4F461] px-8 py-4 w-full rounded-xl font-bold text-xl">Donate now</button>
+                        <input class="px-6 py-4 rounded-lg border" type="text" name="" id="injured-input" placeholder="Write Donation Amount">
+                        <button id="donate-injured" class="bg-[#B4F461] px-8 py-4 w-full rounded-xl font-bold text-xl">Donate now</button>
                     </div>
                 </div>
             </div>
@@ -126,6 +126,13 @@
      <!-- History section -->
      <section id="history-section" class="hidden mt-8 max-w-6xl mx-auto">
         <div id="history-list">
+
+        </div>
+    </section>
+
+    <!-- 2nd section hidden -->
+     <section id="feni-history" class="hidden mt-8 max-w-6xl mx-auto">
+        <div id="feni-list">
 
         </div>
     </section>
